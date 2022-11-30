@@ -23,7 +23,7 @@ class ViewModelCounter : ViewModel() {
   private var state : MutableLiveData<Boolean> =MutableLiveData()
 
  fun startCounter(){
-     var time=20000
+     var time=10000
      val timer=object:CountDownTimer(time.toLong(),1000){
      override fun onTick(millisUntilFinished: Long) {
       val time=millisUntilFinished/1000

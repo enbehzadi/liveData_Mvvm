@@ -45,12 +45,14 @@ class MainActivity : AppCompatActivity() {
 
         binding.btStart.setOnClickListener{
             ViewModelCounter.startCounter()
+            binding.btStart.isEnabled = false
         }
 
 
         ViewModelCounter.getState().observe(this, Observer {
             if (it){
                 binding.tvcounter.text = "End Counter"
+                binding.btStart.isEnabled = true
             }
         })
         ViewModelCounter.getCounter().observe(this, Observer {
